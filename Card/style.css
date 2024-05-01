@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+  margin: 0;
+  height: 100vh;
+  padding: 0px 200px;
+  background: #272e39;
+}
+
+p,
+h2 {
+  margin: 0;
+  font-size: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  transform-origin: top right;
+  transform: skewY(-4deg);
+}
+
+li {
+  z-index: 1;
+  width: 250px;
+  height: 404px;
+  transform-origin: top left;
+  transform: skewY(4deg) rotatez(14deg);
+  transition: z-index .3s;
+  position: relative;
+}
+
+.details {
+  z-index: 2;
+  height: 100%;
+  background-color: #DADDDF;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  border-radius: 2vw;
+  box-shadow: inset 0px 0px 0px 2vw #FCF8F4;
+  box-sizing: border-box;
+  filter: drop-shadow(2px 6px 3px #00000066);
+  transform: rotate(0deg) translate(0, 0);
+  transition: transform .3s;
+  position: relative;
+}
+
+h2,
+p,
+img {
+  position: absolute;
+  z-index: 4;
+}
+
+p {
+  background-color: #FCF8F4;
+  font-size: 1.4em;
+  padding: 2% 2.5%;
+}
+
+p:nth-child(2n) {
+  top: 3%;
+  left: 5%;
+}
+
+p:nth-child(2n+1) {
+  transform: rotatez(180deg);
+  bottom: 3%;
+  right: 5%;
+}
+
+h2 {
+  background-color: #FCF8F4;
+  text-align: center;
+  width: 126%;
+  left: -15%;
+  top: 46%;
+  padding: 5px;
+  transform: rotatez(-45deg);
+  transition: top .3s;
+  font: inherit;
+}
+
+img {
+  width: 84%;
+  top: 50%;
+  left: 50%;
+  transition-property: width, transform;
+  transition-duration: .3s;
+}
+
+img:nth-child(2n) {
+  transform: translateX(-30%) translateY(5%) rotatez(135deg);
+}
+
+img:nth-child(2n+1) {
+  transform: translateX(-70%) translateY(-105%) rotatez(-45deg);
+}
+
+li:hover {
+  z-index: 4;
+}
+
+li:hover h2 {
+  top: 64%;
+}
+
+li:hover .details {
+  transform: rotate(-14deg) translate(5.5%, 15%) scale(1.2);
+}
+
+li:hover img:nth-child(2n) {
+  width: 60%;
+  transform: translateX(-15%) translateY(60%) rotatez(135deg);
+}
+
+li:hover img:nth-child(2n+1) {
+  width: 120%;
+  transform: translateX(-65%) translateY(-75%) rotatez(-45deg);
+}
